@@ -1,0 +1,189 @@
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --button-background: #28a745;
+    --button-hover: #218838;
+    --button-text: #ffffff;
+    --link-color: #007bff;
+    --input-background: #ffffff;
+    --input-border: #ccc;
+    --input-text: #000000;
+    --notification-success: #28a745;
+    --notification-error: #dc3545;
+    --notification-background: #f8f9fa;
+    --notification-text: #000000;
+}
+
+body.dark {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --button-background: #4caf50;
+    --button-hover: #45a049;
+    --button-text: #ffffff;
+    --link-color: #66b2ff;
+    --input-background: #333333;
+    --input-border: #555555;
+    --input-text: #ffffff;
+    --notification-success: #4caf50;
+    --notification-error: #e57373;
+    --notification-background: #333333;
+    --notification-text: #ffffff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#theme-switcher {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#login-container, #register-container, #main-container, #edit-profile-container, #workshops-container {
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+    box-sizing: border-box;
+    animation: fadeIn 0.5s ease;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background: var(--input-background);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--button-background);
+    border: none;
+    color: var(--button-text);
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--button-hover);
+}
+
+p {
+    text-align: center;
+}
+
+#go-to-login, #go-to-register {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.workshop {
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.workshop:hover {
+    transform: scale(1.05);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.feedback {
+    width: 100%;
+    min-height: 50px;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    background: var(--input-background);
+    color: var(--input-text);
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    resize: none;
+    overflow: hidden;
+}
+
+#notification-container {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.notification {
+    background: var(--notification-background);
+    color: var(--notification-text);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.5s ease, fadeOut 0.5s ease 2.5s forwards;
+}
+
+.notification.success {
+    border-left: 5px solid var(--notification-success);
+}
+
+.notification.error {
+    border-left: 5px solid var(--notification-error);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; }
+}
+
+@media (max-width: 600px) {
+    #login-container, #register-container, #main-container, #edit-profile-container, #workshops-container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
