@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     const registerLink = document.getElementById('go-to-register');
 
-    // Apply the saved theme if it exists
     const savedTheme = localStorage.getItem('theme') || 'light';
     applyTheme(savedTheme);
 
@@ -171,7 +170,6 @@ function displayMainPage(user) {
         filterWorkshops(query, user);
     });
 
-    // Schedule notifications for upcoming workshops (for demonstration purposes)
     setTimeout(() => {
         displayNotification('Lembrete: Você tem um workshop de Design amanhã!', 'success');
     }, 5000);
